@@ -45,20 +45,20 @@
         }
         nav a:hover, nav a.active { background: var(--mid-purple); color: white; }
 
-        /* --- IMAGEN ÚNICA DECORATIVA (A LA DERECHA) --- */
+        /* --- IMAGEN ÚNICA DECORATIVA (REDUX) --- */
         .single-deco-editores {
-            position: fixed; right: 50px; top: 180px;
-            width: 300px; height: 400px;
+            position: fixed; right: 30px; top: 150px;
+            width: 250px; height: 350px;
             border-radius: 30px;
-            border: 8px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border: 8px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             object-fit: cover; z-index: 1;
-            transform: rotate(2deg);
+            transform: rotate(1deg); opacity: 0.8;
         }
 
-        /* --- CONTENEDOR --- */
+        /* --- CONTENEDOR CENTRAL --- */
         .content-wrap {
             width: 90%; max-width: 650px;
-            margin: 40px 350px 60px 0; 
+            margin: 40px 320px 60px 0; 
             z-index: 10;
         }
 
@@ -75,27 +75,43 @@
             line-height: 1.6;
         }
 
-        /* --- LISTA DE ALUMNOS --- */
-        .editors-list {
-            display: grid; grid-template-columns: 1fr; gap: 15px;
+        /* --- LISTA DE ALUMNOS (CARDS) --- */
+        .editors-gallery {
+            display: flex; flex-direction: column; gap: 30px;
         }
 
-        .editor-name {
+        .editor-profile {
             background: var(--bg-lavender);
-            padding: 15px; border-radius: 20px;
-            font-size: 22px; font-weight: 600;
-            color: var(--deep-purple);
+            padding: 25px; border-radius: 30px;
+            display: flex; align-items: center; gap: 20px;
             border: 1px solid transparent;
             transition: 0.3s;
-            display: flex; align-items: center; justify-content: center; gap: 10px;
+            text-align: left;
         }
-        .editor-name:hover {
+        .editor-profile:hover {
             border-color: var(--mid-purple);
             background: white;
-            transform: scale(1.02);
+            transform: scale(1.03);
             box-shadow: 0 5px 15px rgba(124, 58, 237, 0.1);
         }
-        .editor-name::before { content: "✦"; color: var(--mid-purple); }
+
+        .editor-img {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            border: 4px solid var(--mid-purple);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .editor-info h3 {
+            font-family: 'Syne'; font-size: 22px; margin: 0;
+            color: var(--deep-purple);
+        }
+
+        .editor-phrase {
+            font-family: 'Caveat'; font-size: 20px; color: var(--mid-purple);
+            margin: 5px 0 0 0; line-height: 1.2;
+        }
 
         .footer-note {
             margin-top: 40px; font-family: 'Caveat';
@@ -124,7 +140,7 @@
         </nav>
     </header>
 
-    <img src="editores_purple.png" class="single-deco-editores" alt="Equipo de Trabajo">
+    <img src="editores_purple_small.png" class="single-deco-editores" alt="Equipo de Trabajo">
 
     <div class="content-wrap">
         <main class="editors-card">
@@ -135,12 +151,48 @@
                 Este sitio web es el resultado del esfuerzo y la creatividad de los alumnos del <b>COBAT 22</b>. Un equipo dedicado a sintetizar el conocimiento de este parcial en una plataforma digital innovadora.
             </p>
 
-            <div class="editors-list">
-                <div class="editor-name">Fatima</div>
-                <div class="editor-name">Giovany</div>
-                <div class="editor-name">Jacqueline</div>
-                <div class="editor-name">Emily</div>
-                <div class="editor-name">Madayd</div>
+            <div class="editors-gallery">
+                
+                <div class="editor-profile">
+                    <img src="alumno1.png" class="editor-img" alt="Fatima">
+                    <div class="editor-info">
+                        <h3>Fatima</h3>
+                        <p class="editor-phrase">"Crear es el superpoder de nuestra mente."</p>
+                    </div>
+                </div>
+
+                <div class="editor-profile">
+                    <img src="alumno2.png" class="editor-img" alt="Giovany">
+                    <div class="editor-info">
+                        <h3>Giovany</h3>
+                        <p class="editor-phrase">"La tecnología nos conecta, la creatividad nos une."</p>
+                    </div>
+                </div>
+
+                <div class="editor-profile">
+                    <img src="alumno3.png" class="editor-img" alt="Jacqueline">
+                    <div class="editor-info">
+                        <h3>Jacqueline</h3>
+                        <p class="editor-phrase">"Aprender es divertido, compartirlo es mejor."</p>
+                    </div>
+                </div>
+
+                <div class="editor-profile">
+                    <img src="alumno4.png" class="editor-img" alt="Emily">
+                    <div class="editor-info">
+                        <h3>Emily</h3>
+                        <p class="editor-phrase">"Cada detalle cuenta para contar una historia."</p>
+                    </div>
+                </div>
+
+                <div class="editor-profile">
+                    <img src="alumno5.png" class="editor-img" alt="Madayd">
+                    <div class="editor-info">
+                        <h3>Madayd</h3>
+                        <p class="editor-phrase">"Diseñamos el futuro, un parcial a la vez."</p>
+                    </div>
+                </div>
+
             </div>
 
             <p class="footer-note">¡Gracias por visitar nuestro proyecto!</p>
