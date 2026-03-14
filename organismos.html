@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organismos | Purple Edition 💜</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;600&family=Syne:wght@700&family=Caveat:wght@700&display=swap');
+
+        :root {
+            --deep-purple: #4c1d95;
+            --mid-purple: #7c3aed;
+            --soft-lila: #ddd6fe;
+            --bg-lavender: #f5f3ff;
+            --glass-white: rgba(255, 255, 255, 0.9);
+        }
+
+        body {
+            background-color: var(--bg-lavender);
+            background-image: 
+                linear-gradient(var(--soft-lila) 1.5px, transparent 1.5px),
+                linear-gradient(90deg, var(--soft-lila) 1.5px, transparent 1.5px);
+            background-size: 35px 35px;
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--deep-purple);
+        }
+
+        /* --- MENÚ --- */
+        .main-nav {
+            width: 95%; max-width: 1000px;
+            background: var(--glass-white);
+            backdrop-filter: blur(10px);
+            margin: 20px 0; padding: 10px 20px;
+            border-radius: 20px; border: 1px solid var(--soft-lila);
+            position: sticky; top: 15px; z-index: 1000;
+        }
+
+        nav ul { list-style: none; display: flex; gap: 8px; margin: 0; padding: 0; justify-content: center; flex-wrap: wrap; }
+        nav a {
+            text-decoration: none; color: var(--deep-purple);
+            font-weight: 600; font-size: 11px; padding: 8px 15px;
+            border-radius: 10px; transition: 0.3s; text-transform: uppercase;
+        }
+        nav a:hover, nav a.active { background: var(--mid-purple); color: white; }
+
+        /* --- IMAGEN ÚNICA DECORATIVA --- */
+        .single-deco-bio {
+            position: fixed; left: 50px; top: 180px;
+            width: 280px; height: 450px;
+            border-radius: 20px 20px 20px 150px;
+            border: 6px solid white; box-shadow: 0 20px 40px rgba(124, 58, 237, 0.1);
+            object-fit: cover; z-index: 1;
+        }
+
+        /* --- CONTENEDOR --- */
+        .content-container {
+            width: 90%; max-width: 750px;
+            margin: 40px 0 60px 320px; 
+            z-index: 10;
+        }
+
+        .bio-card {
+            background: white; padding: 50px; border-radius: 40px;
+            border: 1px solid var(--soft-lila);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        h1 { font-family: 'Syne'; font-size: 40px; margin: 0; color: var(--mid-purple); }
+
+        .purpose-box {
+            background: var(--bg-lavender); padding: 25px;
+            border-radius: 25px; margin: 25px 0;
+            border-left: 8px solid var(--mid-purple);
+            font-size: 17px; line-height: 1.6;
+        }
+
+        /* --- PROGRESIONES --- */
+        .progression-stack { display: flex; flex-direction: column; gap: 20px; }
+        
+        .prog-item {
+            padding: 20px; border-radius: 20px;
+            background: white; border: 1px solid var(--soft-lila);
+            transition: 0.3s;
+        }
+        .prog-item:hover { border-color: var(--mid-purple); transform: translateX(10px); }
+        .prog-item b { color: var(--mid-purple); font-family: 'Syne'; display: block; margin-bottom: 5px; }
+
+        /* --- CUADRO DE PALABRAS (Contenidos) --- */
+        .contents-grid {
+            display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; justify-content: center;
+        }
+        .content-pill {
+            background: var(--mid-purple); color: white;
+            padding: 8px 16px; border-radius: 50px;
+            font-size: 13px; font-weight: 600;
+        }
+
+        /* --- DOCENTE --- */
+        .teacher-box {
+            display: flex; align-items: center; gap: 20px;
+            background: var(--deep-purple); color: white;
+            padding: 20px; border-radius: 30px; margin-top: 40px;
+        }
+        .teacher-box img {
+            width: 90px; height: 90px; border-radius: 20px;
+            border: 3px solid var(--soft-lila); object-fit: cover;
+        }
+
+    </style>
+</head>
+<body onclick="playMusic()">
+
+    <audio id="bgMusic" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="main-nav">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="admin.html">Admin II</a></li>
+                <li><a href="historia.html">Conciencia</a></li>
+                <li><a href="comu.html">Comunicación</a></li>
+                <li><a href="psico.html">Psicología</a></li>
+                <li><a href="organismos.html" class="active">Organismos</a></li>
+                <li><a href="user.html">Editores</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <img src="bio_purple.png" class="single-deco-bio" alt="Biología Organismos">
+
+    <div class="content-container">
+        <main class="bio-card">
+            <span style="font-family: 'Caveat'; font-size: 28px; color: var(--mid-purple);">Ciencias de la Vida</span>
+            <h1>Organismos</h1>
+            
+            <div class="purpose-box">
+                <b>Propósito:</b><br>
+                Comprender la formación y funcionamiento de los seres vivos. Desde la unidad básica de la vida, la célula, hasta los complejos sistemas multicelulares, explorando los procesos vitales, la herencia y la evolución que explican nuestra asombrosa diversidad biológica.
+            </div>
+
+            <div class="progression-stack">
+                <div class="prog-item">
+                    <b>Progresión 1: La Unidad de la Vida</b>
+                    Estudiamos la célula como unidad estructural y funcional, diferenciando organismos unicelulares de pluricelulares y analizando funciones vitales básicas.
+                </div>
+                <div class="prog-item">
+                    <b>Progresión 2: Maquinaria Celular</b>
+                    Exploramos las estructuras especializadas dentro de la célula, la importancia de la membrana celular y las reacciones químicas esenciales para la vida.
+                </div>
+                <div class="prog-item">
+                    <b>Progresión 3: Niveles de Organización</b>
+                    Analizamos cómo las células se organizan en tejidos, órganos y sistemas, y cómo estos evolucionan y cambian a través del tiempo.
+                </div>
+            </div>
+
+            <div class="contents-grid">
+                <div class="content-pill">Célula</div>
+                <div class="content-pill">Unicelulares</div>
+                <div class="content-pill">Membrana Celular</div>
+                <div class="content-pill">Tejidos</div>
+                <div class="content-pill">Órganos</div>
+                <div class="content-pill">Sistemas</div>
+                <div class="content-pill">Herencia</div>
+                <div class="content-pill">Evolución</div>
+            </div>
+
+            <div class="teacher-box">
+                <img src="img5.png" alt="Docente">
+                <div>
+                    <h3 style="margin:0; font-family: 'Syne';">Catedrático de Organismos</h3>
+                    <p style="margin:0; font-size: 14px; opacity: 0.8;">Ciencias Experimentales</p>
+                    <small style="font-style: italic;">"La vida es el sistema más complejo del universo."</small>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>COBAT 22 • BIOLOGY HUB 2026</footer>
+
+    <script>
+        function playMusic() {
+            var audio = document.getElementById("bgMusic");
+            if (audio.paused) { audio.play(); }
+        }
+    </script>
+</body>
+</html>
