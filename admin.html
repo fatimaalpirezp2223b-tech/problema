@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin II | Purple Edition 💜</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;600&family=Syne:wght@700&family=Caveat:wght@700&display=swap');
+
+        :root {
+            --deep-purple: #4c1d95;
+            --mid-purple: #7c3aed;
+            --soft-lila: #ddd6fe;
+            --bg-lavender: #f5f3ff;
+            --glass-white: rgba(255, 255, 255, 0.8);
+        }
+
+        body {
+            background-color: var(--bg-lavender);
+            background-image: radial-gradient(var(--soft-lila) 1px, transparent 1px);
+            background-size: 25px 25px;
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--deep-purple);
+        }
+
+        /* --- MENÚ REORGANIZADO --- */
+        .main-nav {
+            width: 95%; max-width: 1000px;
+            background: var(--glass-white);
+            backdrop-filter: blur(10px);
+            margin: 20px 0; padding: 10px 20px;
+            border-radius: 20px; border: 1px solid var(--soft-lila);
+            position: sticky; top: 15px; z-index: 1000;
+        }
+
+        nav ul { list-style: none; display: flex; gap: 8px; margin: 0; padding: 0; justify-content: center; }
+        nav a {
+            text-decoration: none; color: var(--deep-purple);
+            font-weight: 600; font-size: 11px; padding: 8px 15px;
+            border-radius: 10px; transition: 0.3s; text-transform: uppercase;
+        }
+        nav a:hover, nav a.active { background: var(--mid-purple); color: white; }
+
+        /* --- IMAGEN ÚNICA DECORATIVA --- */
+        .deco-frame {
+            position: fixed; left: 50px; top: 150px;
+            width: 280px; height: 400px;
+            border-radius: 100px 100px 20px 20px;
+            border: 5px solid white; box-shadow: 0 15px 35px rgba(124, 58, 237, 0.2);
+            object-fit: cover; z-index: 1;
+        }
+
+        /* --- CONTENEDOR DE INFORMACIÓN --- */
+        .content-wrapper {
+            width: 90%; max-width: 700px;
+            margin: 40px 0 60px 300px; /* Desplazado para la imagen de la izquierda */
+            z-index: 10;
+        }
+
+        .main-card {
+            background: white; padding: 45px; border-radius: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            border: 1px solid var(--soft-lila);
+        }
+
+        h1 { font-family: 'Syne'; font-size: 42px; margin: 0; color: var(--mid-purple); }
+
+        .info-block {
+            background: var(--bg-lavender); padding: 25px;
+            border-radius: 25px; margin: 25px 0;
+            border-left: 6px solid var(--mid-purple);
+        }
+
+        /* --- CUADROS DE PALABRAS --- */
+        .concept-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;
+        }
+        .concept-box {
+            background: white; border: 2px solid var(--soft-lila);
+            padding: 15px; border-radius: 15px; text-align: center;
+            font-weight: 600; transition: 0.3s;
+        }
+        .concept-box:hover { background: var(--mid-purple); color: white; border-color: var(--mid-purple); }
+
+        /* --- SECCIÓN DOCENTE (Siempre presente) --- */
+        .teacher-card {
+            display: flex; align-items: center; gap: 20px;
+            background: var(--deep-purple); color: white;
+            padding: 25px; border-radius: 30px; margin-top: 40px;
+        }
+        .teacher-card img {
+            width: 100px; height: 100px; border-radius: 20px;
+            border: 3px solid var(--soft-lila); object-fit: cover;
+        }
+
+        footer { opacity: 0.4; font-size: 11px; padding-bottom: 30px; }
+
+    </style>
+</head>
+<body onclick="playMusic()">
+
+    <audio id="bgMusic" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="main-nav">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="admin.html" class="active">Admin II</a></li>
+                <li><a href="historia.html">Conciencia</a></li>
+                <li><a href="comu.html">Comunicación</a></li>
+                <li><a href="psico.html">Psicología</a></li>
+                <li><a href="organismos.html">Organismos</a></li>
+                <li><a href="user.html">Editores</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <img src="admin_purple.png" class="deco-frame" alt="Decoración Administración">
+
+    <div class="content-wrapper">
+        <main class="main-card">
+            <span style="font-family: 'Caveat'; font-size: 28px; color: var(--mid-purple);">Materia Eje</span>
+            <h1>Administración II</h1>
+            
+            <div class="info-block">
+                <p style="margin:0; font-size: 18px; line-height: 1.6;">
+                    En este segundo nivel, profundizamos en la estructura de las organizaciones modernas. Aprendemos que administrar no es solo mandar, sino <b>diseñar sistemas</b> donde el talento humano y los recursos fluyan en armonía para alcanzar metas sociales y económicas.
+                </p>
+            </div>
+
+            <h2 style="font-family: 'Syne'; font-size: 22px;">Progresiones del Parcial</h2>
+            <div class="concept-grid">
+                <div class="concept-box">Proceso Administrativo</div>
+                <div class="concept-box">Toma de Decisiones</div>
+                <div class="concept-box">Control Eficaz</div>
+                <div class="concept-box">Ética Empresarial</div>
+            </div>
+
+            <div class="teacher-card">
+                <img src="img1.png" alt="Docente">
+                <div>
+                    <h3 style="margin:0; font-family: 'Syne';">Lucía Sánchez</h3>
+                    <p style="margin:0; opacity: 0.8;">Catedrática Titular</p>
+                    <small style="font-style: italic;">"La mejor estructura es la que permite crecer."</small>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>COBAT 22 • HUB DIGITAL 2026</footer>
+
+    <script>
+        function playMusic() {
+            var audio = document.getElementById("bgMusic");
+            if (audio.paused) { audio.play(); }
+        }
+    </script>
+</body>
+</html>

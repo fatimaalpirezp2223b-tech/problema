@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conciencia III | Purple Edition 💜</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;600&family=Syne:wght@700&family=Caveat:wght@700&display=swap');
+
+        :root {
+            --deep-purple: #4c1d95;
+            --mid-purple: #7c3aed;
+            --soft-lila: #ddd6fe;
+            --bg-lavender: #f5f3ff;
+            --glass-white: rgba(255, 255, 255, 0.8);
+        }
+
+        body {
+            background-color: var(--bg-lavender);
+            background-image: 
+                linear-gradient(var(--soft-lila) 1px, transparent 1px),
+                linear-gradient(90deg, var(--soft-lila) 1px, transparent 1px);
+            background-size: 40px 40px;
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--deep-purple);
+        }
+
+        /* --- MENÚ --- */
+        .main-nav {
+            width: 95%; max-width: 1000px;
+            background: var(--glass-white);
+            backdrop-filter: blur(10px);
+            margin: 20px 0; padding: 10px 20px;
+            border-radius: 20px; border: 1px solid var(--soft-lila);
+            position: sticky; top: 15px; z-index: 1000;
+        }
+
+        nav ul { list-style: none; display: flex; gap: 8px; margin: 0; padding: 0; justify-content: center; }
+        nav a {
+            text-decoration: none; color: var(--deep-purple);
+            font-weight: 600; font-size: 11px; padding: 8px 15px;
+            border-radius: 10px; transition: 0.3s; text-transform: uppercase;
+        }
+        nav a:hover, nav a.active { background: var(--mid-purple); color: white; }
+
+        /* --- IMAGEN ÚNICA DECORATIVA --- */
+        .single-deco-history {
+            position: fixed; right: 50px; top: 160px;
+            width: 300px; height: 450px;
+            border-radius: 20px 20px 150px 20px;
+            border: 8px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            object-fit: cover; z-index: 1;
+        }
+
+        /* --- CONTENEDOR --- */
+        .content-container {
+            width: 90%; max-width: 700px;
+            margin: 40px 300px 60px 0; /* Desplazado para la imagen a la derecha */
+            z-index: 10;
+        }
+
+        .history-card {
+            background: white; padding: 50px; border-radius: 40px;
+            border: 1px solid var(--soft-lila);
+        }
+
+        h1 { font-family: 'Syne'; font-size: 40px; margin: 0; color: var(--mid-purple); line-height: 1; }
+
+        .timeline-block {
+            border-left: 2px dashed var(--mid-purple);
+            padding-left: 30px; margin: 30px 0;
+        }
+
+        .event { margin-bottom: 25px; position: relative; }
+        .event::before {
+            content: ""; position: absolute; left: -37px; top: 5px;
+            width: 12px; height: 12px; border-radius: 50%; background: var(--mid-purple);
+        }
+
+        /* --- DOCENTE --- */
+        .prof-box {
+            display: flex; align-items: center; gap: 20px;
+            background: var(--mid-purple); color: white;
+            padding: 20px; border-radius: 25px; margin-top: 40px;
+        }
+        .prof-box img {
+            width: 90px; height: 90px; border-radius: 50%;
+            border: 3px solid white; object-fit: cover;
+        }
+
+    </style>
+</head>
+<body onclick="playMusic()">
+
+    <audio id="bgMusic" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="main-nav">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="admin.html">Admin II</a></li>
+                <li><a href="historia.html" class="active">Conciencia</a></li>
+                <li><a href="comu.html">Comunicación</a></li>
+                <li><a href="psico.html">Psicología</a></li>
+                <li><a href="organismos.html">Organismos</a></li>
+                <li><a href="user.html">Editores</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <img src="historia_purple.png" class="single-deco-history" alt="Historia">
+
+    <div class="content-container">
+        <main class="history-card">
+            <span style="font-family: 'Caveat'; font-size: 28px; color: var(--mid-purple);">Pasado y Presente</span>
+            <h1>Conciencia Histórica III</h1>
+            
+            <p style="font-size: 18px; margin-top: 20px;">
+                Un viaje a través de los eventos que definieron el siglo XX. Analizamos no solo los hechos, sino la <b>construcción social</b> de la memoria y cómo el pasado impacta directamente en nuestra identidad actual.
+            </p>
+
+            <div class="timeline-block">
+                <div class="event">
+                    <b>Transformación Global:</b> El impacto de las ideologías en la formación de los Estados modernos.
+                </div>
+                <div class="event">
+                    <b>Movimientos Sociales:</b> La lucha por los derechos civiles y la evolución de la democracia en México.
+                </div>
+                <div class="event">
+                    <b>Cultura Contemporánea:</b> ¿Cómo el arte y la comunicación reflejan las crisis y esperanzas de cada época?
+                </div>
+            </div>
+
+            <div class="prof-box">
+                <img src="img2.png" alt="Sergio Jovanni">
+                <div>
+                    <h3 style="margin:0; font-family: 'Syne';">Sergio Jovanni</h3>
+                    <p style="margin:0; font-size: 14px; opacity: 0.9;">Guía de Análisis Histórico</p>
+                    <small>"La historia es el mapa de nuestra libertad."</small>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>COBAT 22 • ANALÍTICA HISTÓRICA 2026</footer>
+
+    <script>
+        function playMusic() {
+            var audio = document.getElementById("bgMusic");
+            if (audio.paused) { audio.play(); }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicología II | Purple Edition 💜</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;600&family=Syne:wght@700&family=Caveat:wght@700&display=swap');
+
+        :root {
+            --deep-purple: #4c1d95;
+            --mid-purple: #7c3aed;
+            --soft-lila: #ddd6fe;
+            --bg-lavender: #f5f3ff;
+            --glass-white: rgba(255, 255, 255, 0.9);
+        }
+
+        body {
+            background-color: var(--bg-lavender);
+            background-image: 
+                radial-gradient(circle, var(--soft-lila) 1px, transparent 1px);
+            background-size: 20px 20px;
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--deep-purple);
+        }
+
+        /* --- MENÚ --- */
+        .main-nav {
+            width: 95%; max-width: 1000px;
+            background: var(--glass-white);
+            backdrop-filter: blur(10px);
+            margin: 20px 0; padding: 10px 20px;
+            border-radius: 20px; border: 1px solid var(--soft-lila);
+            position: sticky; top: 15px; z-index: 1000;
+        }
+
+        nav ul { list-style: none; display: flex; gap: 8px; margin: 0; padding: 0; justify-content: center; }
+        nav a {
+            text-decoration: none; color: var(--deep-purple);
+            font-weight: 600; font-size: 11px; padding: 8px 15px;
+            border-radius: 10px; transition: 0.3s; text-transform: uppercase;
+        }
+        nav a:hover, nav a.active { background: var(--mid-purple); color: white; }
+
+        /* --- IMAGEN ÚNICA DECORATIVA --- */
+        .single-deco-psico {
+            position: fixed; right: 60px; top: 180px;
+            width: 280px; height: 420px;
+            border-radius: 20px 150px 20px 150px;
+            border: 6px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            object-fit: cover; z-index: 1;
+        }
+
+        /* --- CONTENEDOR --- */
+        .content-box {
+            width: 90%; max-width: 700px;
+            margin: 40px 320px 60px 0; 
+            z-index: 10;
+        }
+
+        .psico-card {
+            background: white; padding: 50px; border-radius: 40px;
+            border: 1px solid var(--soft-lila);
+        }
+
+        h1 { font-family: 'Syne'; font-size: 40px; margin: 0; color: var(--mid-purple); }
+
+        .thought-section {
+            margin: 30px 0; padding: 25px;
+            background: var(--bg-lavender);
+            border-radius: 25px; border-right: 8px solid var(--mid-purple);
+            font-size: 18px; line-height: 1.6;
+        }
+
+        /* --- CUADROS DE PALABRAS --- */
+        .word-cloud-purple {
+            display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;
+        }
+        .word-item {
+            background: white; border: 2px solid var(--soft-lila);
+            padding: 8px 16px; border-radius: 12px;
+            font-size: 14px; font-weight: 600; color: var(--mid-purple);
+        }
+
+        /* --- DOCENTE --- */
+        .teacher-box {
+            display: flex; align-items: center; gap: 20px;
+            background: var(--soft-lila); color: var(--deep-purple);
+            padding: 20px; border-radius: 30px; margin-top: 40px;
+        }
+        .teacher-box img {
+            width: 90px; height: 90px; border-radius: 50%;
+            border: 4px solid white; object-fit: cover;
+        }
+
+    </style>
+</head>
+<body onclick="playMusic()">
+
+    <audio id="bgMusic" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="main-nav">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="admin.html">Admin II</a></li>
+                <li><a href="historia.html">Conciencia</a></li>
+                <li><a href="comu.html">Comunicación</a></li>
+                <li><a href="psico.html" class="active">Psicología</a></li>
+                <li><a href="organismos.html">Organismos</a></li>
+                <li><a href="user.html">Editores</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <img src="psico_purple.png" class="single-deco-psico" alt="Psicología">
+
+    <div class="content-box">
+        <main class="psico-card">
+            <span style="font-family: 'Caveat'; font-size: 28px; color: var(--mid-purple);">Procesos Mentales</span>
+            <h1>Psicología II</h1>
+            
+            <div class="thought-section">
+                <b>Propósito:</b><br>
+                Nos enfocamos en comprender los procesos cognitivos superiores. Analizamos cómo el cerebro procesa la información a través de la memoria, el lenguaje y el pensamiento, buscando optimizar nuestras estrategias de aprendizaje personal.
+            </div>
+
+            <h2 style="font-family: 'Syne'; font-size: 22px;">Conceptos en Foco</h2>
+            <div class="word-cloud-purple">
+                <div class="word-item">Metacognición</div>
+                <div class="word-item">Memoria a Largo Plazo</div>
+                <div class="word-item">Pensamiento Crítico</div>
+                <div class="word-item">Inteligencias Múltiples</div>
+                <div class="word-item">Atención Selectiva</div>
+                <div class="word-item">Aprendizaje Significativo</div>
+            </div>
+
+            <div class="teacher-box">
+                <img src="img4.png" alt="Bertha Gabriela Piña">
+                <div>
+                    <h3 style="margin:0; font-family: 'Syne';">Bertha Gabriela Piña</h3>
+                    <p style="margin:0; font-size: 14px; opacity: 0.8;">Catedrática de Psicología</p>
+                    <small style="font-style: italic;">"Entender tu mente es la llave de tu libertad."</small>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>COBAT 22 • PSICO HUB 2026</footer>
+
+    <script>
+        function playMusic() {
+            var audio = document.getElementById("bgMusic");
+            if (audio.paused) { audio.play(); }
+        }
+    </script>
+</body>
+</html>
